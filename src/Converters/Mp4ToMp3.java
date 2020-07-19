@@ -18,19 +18,25 @@ public class Mp4ToMp3 implements MediaConverter{
         //get file location and sign it as a file
         File video = new File(file);
         String name = video.getName();
-        System.err.println("File Converting Started");
+        System.out.println("File name: "+name);
+        
+        // Print start file converting
+        System.err.println("Start Converting");
 
-        File Video = new File("F:\\Bitcoin\\week 2\\index.mp3"); //asigning target folder
+        // Create the destination file in target folder
+        File ConvertedFileMp3 = new File("C:\\samples\\Mp4ToMp3_Converted\\"+name.replace(".mp4","")+".mp3");
+        
         //set attributes for video conversion
         AudioAttributes audio = new AudioAttributes();
         EncodingAttributes attr = new EncodingAttributes();
         attr.setFormat("mp3");
         attr.setAudioAttributes(audio);
         
+        // Do the converting 
         Encoder encode=new Encoder();
         try{
-        encode.encode(video, Video, attr);
-            System.err.println("File Converting Finished");
+        encode.encode(video, ConvertedFileMp3, attr);
+            System.err.println("File Converting Finished"+ConvertedFileMp3);
         }catch(Exception e){
             System.err.println(e.toString());
         }
