@@ -7,6 +7,19 @@ import java.util.Map;
 
 public class ConvertTypes {
     
+    private static ConvertTypes instance = null;
+    
+    private ConvertTypes(){
+    
+    }
+    
+    public static ConvertTypes getInstance(){
+    
+        if (instance == null){
+            instance = new ConvertTypes();
+        }
+        return instance;
+    }
     List<ReadFolder> readFolderList = new ArrayList<>();
     
     public void subscribe(ReadFolder readFolder){
