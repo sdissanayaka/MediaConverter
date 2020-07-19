@@ -20,10 +20,11 @@ public class Main {
         mediaFilelink.put("mp4ToMp3Link","c://samples//Mp4ToMp3" ); 
         mediaFilelink.put("mp4ToFlvLink","c://samples//Mp4ToFlv" );
         
-        // Define Objects for both converters
-        ReadMp4ToMp3 readMp4ToMp3 = new ReadMp4ToMp3();
-        ReadMp4ToFlv readMp4ToFlv = new ReadMp4ToFlv();
-        
+        // Define Objects for both converters - factory method implemented
+        ReadFolderFactory readFolderFactory  = new ReadFolderFactory();
+        ReadFolder readMp4ToMp3 = readFolderFactory.getInstance(mediaFilelink);
+        ReadFolder readMp4ToFlv = readFolderFactory.getInstance(mediaFilelink);
+
         // Subscribe listner for both converters
         convertType.subscribe(readMp4ToMp3);
         convertType.subscribe(readMp4ToFlv);
