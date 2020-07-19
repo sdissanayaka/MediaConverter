@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package assignment2;
+package MediaConverter;
 
 import java.io.File;
 import it.sauronsoftware.jave.*;
@@ -12,7 +12,7 @@ import it.sauronsoftware.jave.*;
 
 
 public class MP4toMP3 {
-    public static void ConvertToAudio(File video)
+    public static void ConvertToVideo(File video)
     {
         System.err.println("File Converting Started");
 
