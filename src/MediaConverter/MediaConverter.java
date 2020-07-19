@@ -5,21 +5,20 @@
  */
 package MediaConverter;
 
+import Converters.Mp4ToMp3;
 import java.io.File;
 
 /**
  *
  * @author acer
  */
-public class MediaConverter {
+public interface MediaConverter {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        File Video  = new File("F:\\Bitcoin\\week 1\\index.mp4");
-        MP4toMP3.ConvertToVideo(Video);
+   void Convert(String file);
         
     }
     
-}
+
