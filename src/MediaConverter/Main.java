@@ -12,8 +12,8 @@ public class Main {
         // start point 
         System.out.println("start Converting Media Files");
         
-        // Create convertType object
-        ConvertTypes convertType = new ConvertTypes();
+        // Create convertType object- Using singleton design pattern
+        ConvertTypes convertType = ConvertTypes.getInstance();
         
         // Define Source files
         Map<String, String> mediaFilelink = new HashMap();
